@@ -26,7 +26,7 @@ namespace NoviBet_Api.Controllers.V1
 
 
 
-        [HttpGet("curencyRates")]
+        [HttpGet("curencyRatesXML")]
         public async Task<IActionResult> GetLatestRatesAsync()
         {
             try
@@ -56,7 +56,7 @@ namespace NoviBet_Api.Controllers.V1
             }
         }
 
-        [HttpGet("{walletId}")]
+        [HttpGet("GetWalletBalance/{walletId}")]
         [EnableRateLimiting("ClientIpPolicy")]
         public async Task<IActionResult> GetBalance(long walletId, [FromQuery] string? currency = null)
         {
